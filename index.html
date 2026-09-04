@@ -1,0 +1,607 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modern Tailor | Premium Men's Tailoring</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        MODERN TAILOR
+        <span>PREMIUM MEN'S TAILORING</span>
+    </div>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#fabrics">Fabrics</a>
+        <a href="#studio">Design Studio</a>
+        <a href="demo.html" class="demo-nav">DEMO</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="eyebrow">
+            ESTABLISHED WITH PRECISION
+        </p>
+
+        <h1>
+            MODERN<br>
+            <span>TAILOR</span>
+        </h1>
+
+        <div class="line"></div>
+
+        <h2>
+            Where Fabric Meets Perfect Fit
+        </h2>
+
+        <p class="hero-text">
+            Premium custom tailoring for men and boys.
+            Shirts, trousers, kurtas, suits and traditional
+            outfits designed according to your personality,
+            measurements and style.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#studio" class="btn primary-btn">
+                DESIGN YOUR OUTFIT
+            </a>
+
+            <a href="demo.html" class="btn outline-btn">
+                VIEW DEMO
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section light-section" id="services">
+
+    <div class="section-heading">
+
+        <p class="small-heading">
+            OUR CRAFT
+        </p>
+
+        <h2>
+            Tailored For You
+        </h2>
+
+        <p>
+            From everyday elegance to special occasions,
+            every garment is crafted with attention to detail.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">👔</div>
+
+            <h3>Shirts</h3>
+
+            <p>
+                Formal shirts, casual shirts, party wear
+                and custom designs made to your measurements.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">👖</div>
+
+            <h3>Trousers</h3>
+
+            <p>
+                Perfectly fitted formal pants, casual trousers
+                and custom styles.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🧵</div>
+
+            <h3>Kurtas</h3>
+
+            <p>
+                Elegant traditional kurtas for festivals,
+                weddings and everyday occasions.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🤵</div>
+
+            <h3>Special Wear</h3>
+
+            <p>
+                Wedding outfits, suits, waistcoats,
+                party wear and special custom clothing.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FABRICS ================= -->
+
+<section class="section navy-section" id="fabrics">
+
+    <div class="section-heading white-heading">
+
+        <p class="small-heading">
+            FABRIC COLLECTION
+        </p>
+
+        <h2>
+            Choose Your Material
+        </h2>
+
+        <p>
+            Select a fabric that matches your comfort,
+            occasion and personal style.
+        </p>
+
+    </div>
+
+
+    <div class="fabric-grid">
+
+        <div class="fabric-card">
+
+            <div class="fabric-pattern cotton"></div>
+
+            <div class="fabric-content">
+                <h3>Premium Cotton</h3>
+                <p>Comfortable • Breathable • Everyday</p>
+            </div>
+
+        </div>
+
+
+        <div class="fabric-card">
+
+            <div class="fabric-pattern linen"></div>
+
+            <div class="fabric-content">
+                <h3>Classic Linen</h3>
+                <p>Lightweight • Elegant • Natural</p>
+            </div>
+
+        </div>
+
+
+        <div class="fabric-card">
+
+            <div class="fabric-pattern navy"></div>
+
+            <div class="fabric-content">
+                <h3>Navy Formal</h3>
+                <p>Professional • Classic • Stylish</p>
+            </div>
+
+        </div>
+
+
+        <div class="fabric-card">
+
+            <div class="fabric-pattern charcoal"></div>
+
+            <div class="fabric-content">
+                <h3>Charcoal Premium</h3>
+                <p>Elegant • Refined • Formal</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DESIGN STUDIO ================= -->
+
+<section class="section light-section" id="studio">
+
+    <div class="section-heading">
+
+        <p class="small-heading">
+            INTERACTIVE DESIGN STUDIO
+        </p>
+
+        <h2>
+            Design Your Outfit
+        </h2>
+
+        <p>
+            Select your shirt and trouser colours to see
+            a simple preview of your combination.
+        </p>
+
+    </div>
+
+
+    <div class="studio-container">
+
+        <!-- CONTROLS -->
+
+        <div class="controls">
+
+            <h3>
+                Customize Your Look
+            </h3>
+
+
+            <label>
+                Shirt Colour
+            </label>
+
+            <select id="shirtMaterial">
+
+                <option value="navy">
+                    Navy Blue
+                </option>
+
+                <option value="white">
+                    White
+                </option>
+
+                <option value="black">
+                    Black
+                </option>
+
+                <option value="brown">
+                    Brown
+                </option>
+
+                <option value="cream">
+                    Cream
+                </option>
+
+            </select>
+
+
+            <label>
+                Trouser Colour
+            </label>
+
+            <select id="pantMaterial">
+
+                <option value="black">
+                    Black
+                </option>
+
+                <option value="navy">
+                    Navy Blue
+                </option>
+
+                <option value="grey">
+                    Grey
+                </option>
+
+                <option value="brown">
+                    Brown
+                </option>
+
+                <option value="cream">
+                    Cream
+                </option>
+
+            </select>
+
+
+            <label>
+                Shirt Style
+            </label>
+
+            <select id="shirtStyle">
+
+                <option value="formal">
+                    Formal
+                </option>
+
+                <option value="casual">
+                    Casual
+                </option>
+
+                <option value="kurta">
+                    Kurta Style
+                </option>
+
+            </select>
+
+
+            <label>
+                Fit
+            </label>
+
+            <select id="fit">
+
+                <option value="regular">
+                    Regular Fit
+                </option>
+
+                <option value="slim">
+                    Slim Fit
+                </option>
+
+                <option value="classic">
+                    Classic Fit
+                </option>
+
+            </select>
+
+
+            <a href="#contact"
+               class="btn primary-btn full-btn">
+
+                BOOK THIS DESIGN
+
+            </a>
+
+        </div>
+
+
+        <!-- PREVIEW -->
+
+        <div class="preview-area">
+
+            <div class="preview-label">
+                YOUR OUTFIT PREVIEW
+            </div>
+
+
+            <div class="person">
+
+                <div class="head"></div>
+
+                <div class="hair"></div>
+
+                <div class="body"
+                     id="shirt">
+                </div>
+
+                <div class="collar"
+                     id="collar">
+                </div>
+
+                <div class="tie"
+                     id="tie">
+                </div>
+
+                <div class="leg left-leg"
+                     id="pantLeft">
+                </div>
+
+                <div class="leg right-leg"
+                     id="pantRight">
+                </div>
+
+                <div class="shoe left-shoe"></div>
+
+                <div class="shoe right-shoe"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DEMO PROMOTION ================= -->
+
+<section class="demo-banner">
+
+    <div>
+
+        <p class="small-heading">
+            STYLE INSPIRATION
+        </p>
+
+        <h2>
+            See How Different Styles Look
+        </h2>
+
+        <p>
+            Explore Casual, Old Money, Formal,
+            Traditional and Party Wear looks.
+        </p>
+
+    </div>
+
+    <a href="demo.html"
+       class="btn white-btn">
+
+        EXPLORE DEMO
+
+    </a>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about-section"
+         id="about">
+
+    <div class="about-container">
+
+        <div class="about-text">
+
+            <p class="small-heading">
+                ABOUT MODERN TAILOR
+            </p>
+
+            <h2>
+                The Art of Perfect Tailoring
+            </h2>
+
+            <p>
+                At Modern Tailor, we believe that great clothing
+                starts with the perfect fit. Every garment is
+                carefully designed and stitched according to
+                your measurements, choice of material and style.
+            </p>
+
+            <p>
+                Whether you need a formal shirt, perfectly fitted
+                trousers, an elegant kurta or a special outfit,
+                we bring your idea from fabric to finished garment.
+            </p>
+
+            <p class="signature">
+                — Modern Tailor
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section contact-section"
+         id="contact">
+
+    <div class="section-heading white-heading">
+
+        <p class="small-heading">
+            GET IN TOUCH
+        </p>
+
+        <h2>
+            Visit Modern Tailor
+        </h2>
+
+        <p>
+            Let's create something that fits you perfectly.
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <div class="contact-box">
+
+            <div class="contact-icon">
+                ☎
+            </div>
+
+            <h3>
+                Call Us
+            </h3>
+
+            <p>
+                917359****
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <div class="contact-icon">
+                ✉
+            </div>
+
+            <h3>
+                Email
+            </h3>
+
+            <p>
+                nirmal@gmail.com
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <div class="contact-icon">
+                ✂
+            </div>
+
+            <h3>
+                Specialty
+            </h3>
+
+            <p>
+                Custom Men's Tailoring
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        MODERN TAILOR
+    </div>
+
+    <p>
+        Premium Men's Tailoring • Crafted With Precision
+    </p>
+
+    <p class="copyright">
+        © 2026 Modern Tailor. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```

@@ -1,0 +1,479 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Modern Tailor | Style Demo
+    </title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        MODERN TAILOR
+
+        <span>
+            PREMIUM MEN'S TAILORING
+        </span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="index.html#services">
+            Services
+        </a>
+
+        <a href="index.html#fabrics">
+            Fabrics
+        </a>
+
+        <a href="index.html#studio">
+            Design Studio
+        </a>
+
+        <a href="demo.html"
+           class="demo-nav active">
+            DEMO
+        </a>
+
+        <a href="index.html#about">
+            About
+        </a>
+
+        <a href="index.html#contact">
+            Contact
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= DEMO HERO ================= -->
+
+<section class="demo-hero">
+
+    <div>
+
+        <p class="eyebrow">
+            MODERN TAILOR STYLE COLLECTION
+        </p>
+
+        <h1>
+            FIND YOUR
+            <span>STYLE</span>
+        </h1>
+
+        <p>
+            Explore different looks and get inspiration
+            for your next custom outfit.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FILTER ================= -->
+
+<section class="demo-section">
+
+    <div class="section-heading">
+
+        <p class="small-heading">
+            STYLE LOOKBOOK
+        </p>
+
+        <h2>
+            Explore Different Looks
+        </h2>
+
+        <p>
+            Choose a category to explore different
+            men's fashion styles.
+        </p>
+
+    </div>
+
+
+    <div class="filter-buttons">
+
+        <button class="filter-btn active"
+                onclick="filterLooks('all')">
+
+            All
+
+        </button>
+
+        <button class="filter-btn"
+                onclick="filterLooks('casual')">
+
+            Casual
+
+        </button>
+
+        <button class="filter-btn"
+                onclick="filterLooks('oldmoney')">
+
+            Old Money
+
+        </button>
+
+        <button class="filter-btn"
+                onclick="filterLooks('formal')">
+
+            Formal
+
+        </button>
+
+        <button class="filter-btn"
+                onclick="filterLooks('traditional')">
+
+            Traditional
+
+        </button>
+
+        <button class="filter-btn"
+                onclick="filterLooks('party')">
+
+            Party Wear
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= LOOKBOOK ================= -->
+
+    <div class="lookbook">
+
+
+        <!-- CASUAL -->
+
+        <div class="look-card casual">
+
+            <div class="look-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=900&q=85"
+                alt="Men Casual Fashion">
+
+            </div>
+
+            <div class="look-info">
+
+                <span>
+                    CASUAL
+                </span>
+
+                <h3>
+                    Smart Casual
+                </h3>
+
+                <p>
+                    Relaxed shirts and trousers
+                    for an effortless everyday look.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- OLD MONEY -->
+
+        <div class="look-card oldmoney">
+
+            <div class="look-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=900&q=85"
+                alt="Old Money Men's Fashion">
+
+            </div>
+
+            <div class="look-info">
+
+                <span>
+                    OLD MONEY
+                </span>
+
+                <h3>
+                    Classic Heritage
+                </h3>
+
+                <p>
+                    Clean silhouettes, neutral colours
+                    and timeless elegance.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORMAL -->
+
+        <div class="look-card formal">
+
+            <div class="look-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=900&q=85"
+                alt="Formal Men's Suit">
+
+            </div>
+
+            <div class="look-info">
+
+                <span>
+                    FORMAL
+                </span>
+
+                <h3>
+                    Executive Style
+                </h3>
+
+                <p>
+                    Sharp tailoring for meetings,
+                    business and important occasions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TRADITIONAL -->
+
+        <div class="look-card traditional">
+
+            <div class="look-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1597983073493-88cd35cf93d0?auto=format&fit=crop&w=900&q=85"
+                alt="Traditional Men's Fashion">
+
+            </div>
+
+            <div class="look-info">
+
+                <span>
+                    TRADITIONAL
+                </span>
+
+                <h3>
+                    Royal Kurta
+                </h3>
+
+                <p>
+                    Elegant traditional clothing
+                    for festivals and celebrations.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PARTY -->
+
+        <div class="look-card party">
+
+            <div class="look-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=85"
+                alt="Men Party Wear">
+
+            </div>
+
+            <div class="look-info">
+
+                <span>
+                    PARTY WEAR
+                </span>
+
+                <h3>
+                    Evening Elegance
+                </h3>
+
+                <p>
+                    Stylish outfits designed
+                    to stand out at special events.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORMAL 2 -->
+
+        <div class="look-card formal">
+
+            <div class="look-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1555069519-127aadedf1ee?auto=format&fit=crop&w=900&q=85"
+                alt="Men Formal Clothing">
+
+            </div>
+
+            <div class="look-info">
+
+                <span>
+                    FORMAL
+                </span>
+
+                <h3>
+                    Navy Classic
+                </h3>
+
+                <p>
+                    A timeless navy combination
+                    for a sophisticated appearance.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="demo-cta">
+
+    <p class="small-heading">
+        FOUND YOUR STYLE?
+    </p>
+
+    <h2>
+        Let's Make It For You.
+    </h2>
+
+    <p>
+        Bring your favourite design to Modern Tailor
+        and we will create it according to your measurements.
+    </p>
+
+    <div class="cta-buttons">
+
+        <a href="index.html#studio"
+           class="btn white-btn">
+
+            DESIGN YOUR OUTFIT
+
+        </a>
+
+        <a href="index.html#contact"
+           class="btn outline-white-btn">
+
+            CONTACT US
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        MODERN TAILOR
+    </div>
+
+    <p>
+        Premium Men's Tailoring • Crafted With Precision
+    </p>
+
+    <p class="copyright">
+        © 2026 Modern Tailor. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+function filterLooks(category) {
+
+    const cards =
+        document.querySelectorAll(".look-card");
+
+    const buttons =
+        document.querySelectorAll(".filter-btn");
+
+
+    buttons.forEach(button => {
+
+        button.classList.remove("active");
+
+    });
+
+
+    event.target.classList.add("active");
+
+
+    cards.forEach(card => {
+
+        if (category === "all") {
+
+            card.style.display = "block";
+
+        }
+
+        else if (card.classList.contains(category)) {
+
+            card.style.display = "block";
+
+        }
+
+        else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
+
+</body>
+</html>
+```
