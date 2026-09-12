@@ -580,6 +580,101 @@
 
 </section>
 
+<!-- APPOINTMENT SECTION -->
+<section class="appointment" id="appointment">
+    <div class="appointment-container">
+
+        <div class="appointment-header">
+            <span>BOOK YOUR VISIT</span>
+            <h2>Make an Appointment</h2>
+            <p>
+                Choose your preferred date and time and we'll get back to you
+                to confirm your appointment.
+            </p>
+        </div>
+
+        <form id="appointmentForm" class="appointment-form">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="customerName">Your Name</label>
+                    <input
+                        type="text"
+                        id="customerName"
+                        name="customerName"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        name="customerPhone"
+                        placeholder="10-digit mobile number"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="appointmentDate">Preferred Date</label>
+                    <input
+                        type="date"
+                        id="appointmentDate"
+                        name="appointmentDate"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentTime">Preferred Time</label>
+                    <input
+                        type="time"
+                        id="appointmentTime"
+                        name="appointmentTime"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="appointmentService">Service</label>
+                <select id="appointmentService" name="appointmentService" required>
+                    <option value="">Select a service</option>
+                    <option value="Custom Suit">Custom Suit</option>
+                    <option value="Shirt">Shirt</option>
+                    <option value="Trousers">Trousers</option>
+                    <option value="Alteration">Alteration</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="appointmentDetails">Additional Details</label>
+                <textarea
+                    id="appointmentDetails"
+                    name="appointmentDetails"
+                    rows="4"
+                    placeholder="Tell us anything we should know..."
+                ></textarea>
+            </div>
+
+            <button type="submit" class="appointment-button">
+                BOOK APPOINTMENT
+            </button>
+
+            <p id="appointmentStatus" class="appointment-status"></p>
+
+        </form>
+    </div>
+</section>    
+
 
 <!-- ================= FOOTER ================= -->
 
