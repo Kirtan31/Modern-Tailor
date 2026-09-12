@@ -1,5 +1,5 @@
+```javascript
 const express = require("express");
-const twilio = require("twilio");
 
 const app = express();
 
@@ -7,16 +7,14 @@ app.use(express.json());
 
 
 // ================================
-// TWILIO CONFIGURATION
+// TEXTBEE CONFIGURATION
 // ================================
 
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
+const TEXTBEE_API_KEY =
+    process.env.TEXTBEE_API_KEY;
 
-const client = twilio(accountSid, authToken);
-
-const TWILIO_PHONE_NUMBER =
-    process.env.TWILIO_PHONE_NUMBER;
+const TEXTBEE_DEVICE_ID =
+    process.env.TEXTBEE_DEVICE_ID;
 
 const OWNER_PHONE_NUMBER =
     process.env.OWNER_PHONE_NUMBER;
@@ -56,7 +54,7 @@ app.post("/api/appointments", async (req, res) => {
         }
 
 
-        // Check phone number
+        // Check customer phone number
         if (!/^[0-9]{10}$/.test(customerPhone)) {
 
             return res.status(400).json({
@@ -71,40 +69,86 @@ app.post("/api/appointments", async (req, res) => {
 NEW MODERN TAILOR APPOINTMENT
 
 Customer: ${customerName}
-Phone: ${customerPhone}
+Phone: +91${customerPhone}
 Date: ${date}
 Time: ${time}
 Service: ${service}
 
 Details:
 ${details || "No additional details provided."}
-        `;
+        `.trim();
 
 
-        // Send SMS
-        await client.messages.create({
+        // ================================
+        // SEND SMS THROUGH TEXTBEE
+        // ================================
 
-            body: message,
+        const response = await fetch(
+            "https://api.textbee.dev/api/v1/gateway/send-sms",
+            {
+                method: "POST",
 
-            from: TWILIO_PHONE_NUMBER,
+                headers: {
+                    "Content-Type": "application/json",
+                    "x-api-key": TEXTBEE_API_KEY
+                },
 
-            to: OWNER_PHONE_NUMBER
+                body: JSON.stringify({
 
-        });
+                    recipients: [
+                        OWNER_PHONE_NUMBER
+                    ],
+
+                    message: message,
+
+                    deviceId: TEXTBEE_DEVICE_ID
+
+                })
+            }
+        );
 
 
+        const data = await response.json();
+
+
+        // Check Textbee response
+        if (!response.ok) {
+
+            console.error(
+                "TEXTBEE ERROR:",
+                data
+            );
+
+            return res.status(500).json({
+                message: "Unable to send appointment SMS."
+            });
+
+        }
+
+
+        // Successful appointment
         res.json({
+
             success: true,
-            message: "Appointment request sent successfully."
+
+            message:
+                "Appointment request sent successfully."
+
         });
 
 
     } catch (error) {
 
-        console.error("SMS ERROR:", error);
+        console.error(
+            "SMS ERROR:",
+            error
+        );
 
         res.status(500).json({
-            message: "Unable to send appointment request."
+
+            message:
+                "Unable to send appointment request."
+
         });
 
     }
@@ -116,7 +160,8 @@ ${details || "No additional details provided."}
 // START SERVER
 // ================================
 
-const PORT = process.env.PORT || 3000;
+const PORT =
+    process.env.PORT || 3000;
 
 app.listen(PORT, () => {
 
@@ -125,3 +170,4 @@ app.listen(PORT, () => {
     );
 
 });
+```
