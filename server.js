@@ -71,7 +71,7 @@ app.post("/api/appointments", async (req, res) => {
 
         // SMS message
         const message = `
-NEW MODERN TAILOR APPOINTMENT
+
 
 Customer: ${customerName}
 Phone: +91${customerPhone}
