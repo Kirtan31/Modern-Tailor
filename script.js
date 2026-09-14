@@ -213,126 +213,204 @@ if (fit) {
 /* Initial preview */
 
 updatePreview();
-```
+
+
 /* =========================================
    APPOINTMENT BOOKING
    ========================================= */
 
-const appointmentForm = document.getElementById("appointmentForm");
-const appointmentStatus = document.getElementById("appointmentStatus");
-const appointmentDate = document.getElementById("appointmentDate");
+const appointmentForm =
+    document.getElementById("appointmentForm");
+
+const appointmentStatus =
+    document.getElementById("appointmentStatus");
+
+const appointmentDate =
+    document.getElementById("appointmentDate");
 
 
 // Prevent customers from selecting a past date
-if (appointmentDate) {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, "0");
-    const day = String(today.getDate()).padStart(2, "0");
 
-    appointmentDate.min = `${year}-${month}-${day}`;
+if (appointmentDate) {
+
+    const today = new Date();
+
+    const year =
+        today.getFullYear();
+
+    const month =
+        String(today.getMonth() + 1).padStart(2, "0");
+
+    const day =
+        String(today.getDate()).padStart(2, "0");
+
+    appointmentDate.min =
+        `${year}-${month}-${day}`;
+
 }
 
 
 // Appointment form submission
+
 if (appointmentForm) {
 
-    appointmentForm.addEventListener("submit", async function (event) {
+    appointmentForm.addEventListener(
+        "submit",
+        async function (event) {
 
-        event.preventDefault();
-
-        const customerName =
-            document.getElementById("customerName").value.trim();
-
-        const customerPhone =
-            document.getElementById("customerPhone").value.trim();
-
-        const date =
-            document.getElementById("appointmentDate").value;
-
-        const time =
-            document.getElementById("appointmentTime").value;
-
-        const service =
-            document.getElementById("appointmentService").value;
-
-        const details =
-            document.getElementById("appointmentDetails").value.trim();
+            event.preventDefault();
 
 
-        // Basic phone validation
-        if (!/^[0-9]{10}$/.test(customerPhone)) {
+            const customerName =
+                document.getElementById("customerName")
+                    .value.trim();
+
+
+            const customerPhone =
+                document.getElementById("customerPhone")
+                    .value.trim();
+
+
+            const date =
+                document.getElementById("appointmentDate")
+                    .value;
+
+
+            const time =
+                document.getElementById("appointmentTime")
+                    .value;
+
+
+            const service =
+                document.getElementById("appointmentService")
+                    .value;
+
+
+            const details =
+                document.getElementById("appointmentDetails")
+                    .value.trim();
+
+
+            // Basic phone validation
+
+            if (!/^[0-9]{10}$/.test(customerPhone)) {
+
+                appointmentStatus.textContent =
+                    "Please enter a valid 10-digit phone number.";
+
+                return;
+
+            }
+
 
             appointmentStatus.textContent =
-                "Please enter a valid 10-digit phone number.";
-
-            return;
-        }
+                "Booking your appointment...";
 
 
-        appointmentStatus.textContent =
-            "Booking your appointment...";
+            try {
 
+                /*
+                 * IMPORTANT:
+                 * This request is sent to the
+                 * Modern Tailor Render backend.
+                 */
 
-        try {
+                const response = await fetch(
+                    "https://modern-tailor-api.onrender.com/api/appointments",
+                    {
 
-            const response = await fetch("/api/appointments", {
+                        method: "POST",
 
-                method: "POST",
+                        headers: {
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                            "Content-Type":
+                                "application/json"
 
-                body: JSON.stringify({
-                    customerName,
-                    customerPhone,
-                    date,
-                    time,
-                    service,
-                    details
-                })
+                        },
 
-            });
+                        body: JSON.stringify({
 
+                            customerName,
 
-            const result = await response.json();
+                            customerPhone,
 
+                            date,
 
-            if (!response.ok) {
-                throw new Error(
-                    result.message || "Unable to book appointment."
+                            time,
+
+                            service,
+
+                            details
+
+                        })
+
+                    }
                 );
+
+
+                const result =
+                    await response.json();
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        result.message ||
+                        "Unable to book appointment."
+                    );
+
+                }
+
+
+                appointmentStatus.textContent =
+                    "Appointment request sent successfully! We will contact you to confirm.";
+
+
+                appointmentForm.reset();
+
+
+                // Restore today's minimum date
+
+                if (appointmentDate) {
+
+                    const today =
+                        new Date();
+
+                    const year =
+                        today.getFullYear();
+
+                    const month =
+                        String(
+                            today.getMonth() + 1
+                        ).padStart(2, "0");
+
+                    const day =
+                        String(
+                            today.getDate()
+                        ).padStart(2, "0");
+
+
+                    appointmentDate.min =
+                        `${year}-${month}-${day}`;
+
+                }
+
+
+            } catch (error) {
+
+                console.error(
+                    "Appointment error:",
+                    error
+                );
+
+
+                appointmentStatus.textContent =
+                    "Something went wrong. Please try again or contact us directly.";
+
             }
 
-
-            appointmentStatus.textContent =
-                "Appointment request sent successfully! We will contact you to confirm.";
-
-
-            appointmentForm.reset();
-
-
-            // Restore today's minimum date
-            if (appointmentDate) {
-                const today = new Date();
-                const year = today.getFullYear();
-                const month = String(today.getMonth() + 1).padStart(2, "0");
-                const day = String(today.getDate()).padStart(2, "0");
-
-                appointmentDate.min =
-                    `${year}-${month}-${day}`;
-            }
-
-
-        } catch (error) {
-
-            console.error("Appointment error:", error);
-
-            appointmentStatus.textContent =
-                "Something went wrong. Please try again or contact us directly.";
         }
-
-    });
+    );
 
 }
+```
